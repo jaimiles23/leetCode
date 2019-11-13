@@ -1,8 +1,8 @@
 # leetCode Problems
-This repository contains my write-ups for different challenges from [leetCode.com](https://leetcode.com/problems/self-dividing-numbers/).
+This repository contains my write-ups for different challenges from [leetCode.com](https://leetcode.com/problems/).
 
 ## Getting Started
-leetCode problems are readily accessible on anyone's computer.  These solutions can be submitted directly into the console for each problem.
+leetCode problems are readily accessible on the browser. The name of each folder corresponds to the problem listed on leetCode. Solutions to each problem may be pasted directly into the browser console and submitted.
 
 ## Navigating
 Each directory represents a leetcode problem.  In each folder, you may find:
@@ -12,4 +12,4 @@ Each directory represents a leetcode problem.  In each folder, you may find:
 * _Auxillary files_: may entail speed test comparisons of solutions and log files. All auxillary files start with the prefix "x_"
 
 ## Languages:
-1. **Python** Python is the first language I learned. I did all of my initial projects in Python as I learned other programming concepts.
+1. **Python** is the first language I learned. Thus far, all solutions have been submitted in Python as I practice other programming concepts.

@@ -2,7 +2,7 @@
  * @author [Jai Miles]
  * @email [jaimiles23@gmail.com]
  * @create date 2019-11-12 13:48:06
- * @modify date 2019-11-13 13:00:19
+ * @modify date 2019-11-13 13:01:50
  * @desc [description]
  */
 
@@ -24,6 +24,7 @@ For each solution, this file documents the:
 ## sol_stringNumber_ratio
 ### Description
 _String number 1:1 ratio_
+
 In a decimal system, each digit is represented by a single string character, [0-9]. This solution utilizes this property to identify the digits to check if the input number is self dividing.
 
 ### Steps
@@ -39,7 +40,8 @@ In a decimal system, each digit is represented by a single string character, [0-
 - Relies on each number being represented by a single string. This solution may not be generalizable to a system which uses multiple characters to represent numbers.
 
 ## sol_baseNum
-_Base number system_
+_Base X number system_
+
 A decimal system uses base 10 to represent digits. This solution continually divides the base number by 10 to locate the next 'digit'.
 
 ### Steps
@@ -56,6 +58,6 @@ A decimal system uses base 10 to represent digits. This solution continually div
 
 
 # Conclusion
-Each solution has merits and should be implemented into a system depending on its intended functionality. I would default to using the **String Number 1:1 ratio** solution because of its ease of implementation and understanding. A fundamental principle of system design is accessibility - a system should be designed to be as  accessible to other collaborators as possible; one key component of accessibility is simplicity. A more complex system, for instance one gated behind potentially non-intuitive math, limits the number of potential collaborators and the effort spent into system maintenance. 
+Each solution has merits and should be implemented into a system depending on its intended functionality. I would default to using the **string number 1:1 ratio** solution because of its ease of implementation and understanding. A fundamental principle of system design is accessibility - a system should be designed to be as  accessible to other collaborators as possible; one key component of accessibility is simplicity. A more complex system, for instance one gated behind potentially non-intuitive math, limits the number of potential collaborators and the effort spent into system maintenance. 
 
-Yet there are cases to implement the **Base X Number Solution**. The scalability of this solution is a boon; implement this solution if the system may eventually require different inputs, e.g., binary. Implementation of this solution may help reduce the labor required to expand the system.
+Yet there are cases to implement the **base X number solution**. The scalability of this solution is a boon; implement this solution if the system may eventually require different inputs, e.g., binary. Implementation of this solution may help reduce the labor required to expand the system.

@@ -1,4 +1,5 @@
 Note: check for consistent usage of problem.
+Note: also indicate that this is a platform for code self review. Once I start review PEP8, come back and re-write code. Also check for long-term readability, etc.
 
 # leetCode Problems
 This repository contains my write-ups for different challenges and learning materials from [leetCode.com](https://leetcode.com/problems/).

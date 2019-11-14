@@ -3,7 +3,7 @@
  * @author [Jai Miles]
  * @email [jaimiles23@gmail.com]
  * @create date 2019-11-13 18:53:39
- * @modify date 2019-11-13 19:57:53
+ * @modify date 2019-11-14 12:18:54
  * @desc [
 Iterative solution to #720 Longest Word in Dictionary
 

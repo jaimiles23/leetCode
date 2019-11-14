@@ -10,6 +10,8 @@
 Runtime: 68 ms, faster than 99.66% of Python3 online submissions for Longest Word in Dictionary.
 Memory Usage: 13 MB, less than 100.00% of Python3 online submissions for Longest Word in Dictionary.
 
+Note: What is important about this solution is the memory usage.  
+To get this speed, online solutions use a set which requires much more memory. This solution has equivalent speeds, while minimizing memory consumption. 
  ]
  */
  """

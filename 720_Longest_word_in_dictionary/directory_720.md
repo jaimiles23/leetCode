@@ -27,4 +27,13 @@ For this problem, I found x solutions:
 * **sol_iterative**: sorts the list and runs through each element of the list iteratively
 * **sol_recursive**: sorts the list and uses recursion to check each element in the list
 
-## Solutions
+# Solutions
+
+## sol_iterative
+
+### Description
+This solution iterates through each item of the list in reverse. Each item is then iteratively shorted until it reaches len(1) or it no longer exists in the words list (and is thus disqualified from the longest word criteria).
+
+### Steps
+1. Sort list smallest -> largest, then z -> a
+2. 

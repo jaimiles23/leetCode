@@ -23,4 +23,8 @@ Regardless of the solution implemented, the first step will be to apply a 2-laye
 
 This sort will allow the selected algorithm to begin with the longest and lexigraphically smaller test cases. Thus, when a solution is found it will immediately be returned.
 
+For this problem, I found x solutions:
+* **sol_iterative**: sorts the list and runs through each element of the list iteratively
+* **sol_recursive**: sorts the list and uses recursion to check each element in the list
+
 ## Solutions

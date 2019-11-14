@@ -5,6 +5,8 @@ This repository contains my write-ups for different challenges from [leetCode.co
 leetCode problems are readily accessible on the browser. The name of each folder corresponds to the problem listed on leetCode. Solutions to each problem may be pasted directly into the browser console and submitted.
 
 ## Navigating
+Directories may include 
+
 Each directory represents a leetcode problem.  In each folder, you may find:
 * _Directions_: explains the premise of the problem with a link to the URL.
 * _Directory_: documents the different files in the folder.

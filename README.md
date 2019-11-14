@@ -1,3 +1,5 @@
+need to update readme with more thorough description of leetcode problems. Also note that this will contain learning exercises too.
+
 # leetCode Problems
 This repository contains my write-ups for different challenges from [leetCode.com](https://leetcode.com/problems/).
 

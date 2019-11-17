@@ -23,6 +23,14 @@ In each solution directory, the following files may be available:
 * _Solutions_: any number of solutions I submitted. All solutions will start with the prefix "sol_"
 * _Auxillary files_: may entail speed test comparisons of solutions and log files. All auxillary files start with the prefix "x_"
 
+#### Directions
+
+#### Directory
+Note: 
+
+#### Solutions
+Please note: each solution uses the class 'Solution'. This naming convention is preserved from leetcode and used so that the solutions can be pasted directly into the console.
+
 ### Learning resources
 The learning resources are those available on leetCode. These include notes and exercises from each section.
 

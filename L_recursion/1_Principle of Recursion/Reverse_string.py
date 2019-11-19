@@ -8,6 +8,9 @@
 print_reverse is the example I developed from the chapter.
 
 reverse_string is the exercise from the next card.
+
+Note: provided solution is s.reverse() - list method.
+
  ]
  */
 """
@@ -66,6 +69,25 @@ def test_reverse_string():
     # print(output)
     assert reverse_string(word) == output
 
+def reverse_string_recursive_pointers(letters: list) -> None:
+    """
+    Reverses a list uses recursion and pointers. 
+
+    reverse_string exceeds memory consumption because it continually slices the same list instead of using pointer variables
+    """
+    def pointer_recursion(letters: list, left: int, right: int):
+        """
+        Recursive with pointers
+        """
+        if left < right:
+            letters[left], letters[right] = letters[right], letters[left]
+            left += 1
+            right -= 1
+            pointer_recursion(letters, left, right)
+        
+    pointer_recursion(letters, 0, len(letters) - 1)
+        
+        
 
 def main():
     # test_print_reverse()
@@ -75,9 +97,4 @@ def main():
 if __name__ == "__main__":
     main()
     pass
-
-
-
-
-
 

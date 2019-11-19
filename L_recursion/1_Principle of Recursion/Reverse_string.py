@@ -42,6 +42,8 @@ def reverse_string(letters: list) -> None:
         return letters
 
     letters[-1], letters[0] = letters[0], letters[-1]
+    letters[1:-1] = reverse_string(letters[1:-1])
+
     return letters
 
 
@@ -52,9 +54,9 @@ def test_reverse_string():
     print('Example 1')
     word = ['h','e','l','l','o']
     output = ['o','l','l','e','h']
-    print(reverse_string(word))
-    print(output)
-    # assert reverse_string(word) == output
+    # print(reverse_string(word))
+    # print(output)
+    assert reverse_string(word) == output
 
 
     print('Example 2')

@@ -14,7 +14,7 @@ There are 3 difficulties of problems: easy, medium, and hard.
 ## Navigating
 This repository primarily contains solutions to leetCode challenges, as well as notes from leetCode learning resources. 
 - Challenge solutions are listed in directories starting with numbers, e.g., "720_". 
-- Learning resources notes are listed in directories with the prefix "lr_".
+- Learning resources notes are listed in directories with the prefix "L_".
 
 ### Problem solutions
 In each solution directory, the following files may be available:
@@ -32,7 +32,7 @@ Note:
 Please note: each solution uses the class 'Solution'. This naming convention is preserved from leetcode and used so that the solutions can be pasted directly into the console.
 
 ### Learning resources
-The learning resources are those available on leetCode. These include notes and exercises from each section.
+The learning resources are those available on leetCode. These include notes and exercises from each section. Learning resources start with the prefix "L_"
 
 ## Languages:
 1. **Python** is the first language I learned. Thus far, all solutions have been submitted in Python as I practice other programming concepts.

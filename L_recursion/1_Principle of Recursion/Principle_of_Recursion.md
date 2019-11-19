@@ -49,3 +49,6 @@ private static void helper(int index, char [] str) {
 }
 ```
 
+Note: recursion can be done by modifying the input array **[in-place](https://en.wikipedia.org/wiki/In-place_algorithm)** with O(1) extra memory - allocated to a temporary variable.
+
+

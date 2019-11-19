@@ -12,10 +12,16 @@ In this Explore card, we answer the following questions:
 3. How to analyze the time and space complexity of a recursive algorithm?
 4. How can we apply recursion in a better way?
 
-
 # Directory
 
 ## Principles of Recursion
+- Principle_of_recursion.md has initial notes on recursion
+- Reverse_string.py tests userdefined recursion function to print word(s) backwards.
+- 
+
+
+
+
 
 ## Recurrence Relation
 

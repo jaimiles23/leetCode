@@ -87,7 +87,6 @@ def reverse_string_recursive_pointers(letters: list) -> None:
         
     pointer_recursion(letters, 0, len(letters) - 1)
         
-        
 
 def main():
     # test_print_reverse()

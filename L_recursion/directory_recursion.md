@@ -15,10 +15,10 @@ In this Explore card, we answer the following questions:
 # Directory
 
 ## Principles of Recursion
-- Principle_of_recursion.md has initial notes on recursion
-- Reverse_string.py tests userdefined recursion function to print word(s) backwards.
-- 
-
+- *Principle_of_recursion.md* has initial notes on recursion
+- *Reverse_string.py* tests userdefined recursion function to print word(s) backwards.
+- *Recursion_function.md* provides guidelines to implement a recursive function
+-  
 
 
 

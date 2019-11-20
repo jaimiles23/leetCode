@@ -1,3 +1,11 @@
+/**
+ * @author [Jai Miles]
+ * @email [jaimiles23@gmail.com]
+ * @create date 2019-11-18 11:14:06
+ * @modify date 2019-11-20 11:14:06
+ * @desc [description]
+ */
+
 # Overview
 This file contains notes and exercises from leetCode's Introduction to Algorithms [Recursion 1](https://leetcode.com/explore/learn/card/recursion-i/)
 

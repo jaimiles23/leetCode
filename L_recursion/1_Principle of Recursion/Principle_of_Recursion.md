@@ -1,3 +1,11 @@
+/**
+ * @author [Jai Miles]
+ * @email [jaimiles23@gmail.com]
+ * @create date 2019-11-18 11:14:17
+ * @modify date 2019-11-20 11:14:17
+ * @desc [description]
+ */
+
 # Principle of Recursion
 **Recursion** is an approach to solving problems using a function that calls itself as a subroutine.
 

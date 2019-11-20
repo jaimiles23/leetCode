@@ -1,3 +1,11 @@
+/**
+ * @author [Jai Miles]
+ * @email [jaimiles23@gmail.com]
+ * @create date 2019-11-18 11:14:21
+ * @modify date 2019-11-20 11:14:21
+ * @desc [description]
+ */
+
 # Recursion Function
 Given a problem defined by F(x), where x is the input and defines the scope of the problem.  Ti implement a recursive solution following these guidelines.
 

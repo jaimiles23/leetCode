@@ -19,5 +19,5 @@ Following the guidelines above:
 2. Call the function recurseively as swap (head.next.next) to swap the following two nodes
 3. Connect the linked list.
 
-Implement the solution in **Swap Nodes in Pairs**
+Implement the guidelines abovefor **[24. Swap Nodes in Pairs](https://leetcode.com/problems/swap-nodes-in-pairs/)**, medium difficulty.
 

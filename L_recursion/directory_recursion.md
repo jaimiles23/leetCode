@@ -2,7 +2,7 @@
  * @author [Jai Miles]
  * @email [jaimiles23@gmail.com]
  * @create date 2019-11-18 11:14:06
- * @modify date 2019-11-20 11:14:06
+ * @modify date 2019-11-20 11:15:16
  * @desc [description]
  */
 
@@ -29,9 +29,11 @@ In this Explore card, we answer the following questions:
 - *Swap_nodes_in_pairs.py* - changes order of every adjacent pair of list nodes.
 
 ## Recurrence Relation
-
+- *Recurrence_relation.md* discusses the relationship between a problem and its subproblems and how to derive a mathematical formula
+- *Pascals_triangle.py* implements a recursive function in Pascal's triangle.
 
 ## Memoization
+
 
 ## Complexity Analysis
 

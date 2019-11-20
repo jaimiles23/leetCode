@@ -1,8 +1,8 @@
 /**
  * @author [Jai Miles]
  * @email [jaimiles23@gmail.com]
- * @create date 2019-11-20 9:12:45
- * @modify date 2019-11-20 11:15:04
+ * @create date 2019-11-20 11:12:45
+ * @modify date 2019-11-20 14:19:55
  * @desc [part 2 of leetCode's recursion explore card]
  */
 # Recurrence Relation
@@ -25,4 +25,31 @@ Define a function, f(i, j) which returns the number in the pascal's triangle in 
 
 f(i, j) = f(i - 1, j - 1) + f(i - 1, j)
 
+### Base cases
+
+The leftmost and rightmost numbers of each row are the base cases, which are always equal to 1. As a result, define the base case as follows:
+f(i, j) = 1, where j == 1 or j == i
+
+### Example
+After defining the _recurrence relation_ and the _base case_, it's more intuitive to implement the recursive function. To apply the recursive formula to calculate f(5, 3), i.e., the 3rd number in the 5th row of the Pascal Triangle.
+```
+f(5, 3) = f(4, 2) + f(4, 3)
+    f(4, 2) 
+        = f(3, 1) + f(3, 2) 
+            = 1 + f(2, 1) + f(2, 2) 
+                = 1 + 1 + 1
+                    = 3
+    f(4, 3) = 
+        f(3, 2) + f(3, 3)
+            = f(2, 1) + f(2, 2) + f(3, 3)
+                = 1 + 1 + 1
+                    = 3
+    = 6
+```
+The value in the 5th row and 3rd column, f(5, 3), is 6.
+
+This recursion is implemented in _Pascals_triangle.py_
+
+### Next
+Note: in the above example, the recursive solution can incur duplicate calculations, e.g., computing the same intermediate numbers. THe next chapter discusses how to avoid _duplicate calculations_.
 

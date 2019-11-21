@@ -2,7 +2,7 @@
  * @author [Jai Miles]
  * @email [jaimiles23@gmail.com]
  * @create date 2019-11-18 11:14:06
- * @modify date 2019-11-20 11:15:16
+ * @modify date 2019-11-20 19:03:32
  * @desc [description]
  */
 
@@ -31,7 +31,8 @@ In this Explore card, we answer the following questions:
 ## Recurrence Relation
 - *Recurrence_relation.md* discusses the relationship between a problem and its subproblems and how to derive a mathematical formula
 - *Pascals_triangle.py* implements a Pascal's triangle with a variety of solutions
-- 
+- *Pascals_triangle_2.py* returns the nth row of the pascal triangle
+- *reverse_linked_list.py* reverses a singly linked list.
 
 ## Memoization
 

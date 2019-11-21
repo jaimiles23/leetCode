@@ -30,7 +30,8 @@ In this Explore card, we answer the following questions:
 
 ## Recurrence Relation
 - *Recurrence_relation.md* discusses the relationship between a problem and its subproblems and how to derive a mathematical formula
-- *Pascals_triangle.py* implements a recursive function in Pascal's triangle.
+- *Pascals_triangle.py* implements a Pascal's triangle with a variety of solutions
+- 
 
 ## Memoization
 

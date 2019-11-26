@@ -3,7 +3,7 @@
  * @author [Jai Miles]
  * @email [jaimiles23@gmail.com]
  * @create date 2019-11-25 23:19:28
- * @modify date 2019-11-26 11:36:25
+ * @modify date 2019-11-26 12:22:10
  * @desc [
 Solution to leetCode's [#50. Pow(x, n)](https://leetcode.com/problems/powx-n/)
 

@@ -90,6 +90,8 @@ class Recursive():
     def myPow(self, x: float, n: int) -> float:
         """
         returns x ** n using recursion
+
+        Note: strive for tail recursive solution in the future
         """
         def helper(x: float, n: int) -> float:
             if n == 1: return x

@@ -3,18 +3,20 @@
  * @author [Jai Miles]
  * @email [jaimiles23@gmail.com]
  * @create date 2019-11-25 22:56:28
- * @modify date 2019-11-25 23:16:20
+ * @modify date 2019-11-25 23:17:34
  * @desc [
 Solution to leetCode's [104. Maximum Depth of Binary Tree](https://leetcode.com/problems/maximum-depth-of-binary-tree/)'
 
-On initial inspection, I was a confused with the direction of the problem. It was recommended that people do the binary tree Explore card before 
-studying recursion, and my struggle to create a solution suggests that I need more familiarity working with n-ary tree structures. 
+On initial inspection, I was a confused with the direction of the problem. It was recommended that people do the binary tree 
+Explore card before studying recursion, and my struggle to create a solution suggests that I need more familiarity working
+with n-ary tree structures. 
 
 I implemented [this](https://leetcode.com/problems/maximum-depth-of-binary-tree/discuss/139585/Explanations-in-Python) solution that
 I found online. I did feel confident re-creating it and understanding the logic.
  ]
 ' */
 """
+
 
 # Definition for a binary tree node.
 class TreeNode:

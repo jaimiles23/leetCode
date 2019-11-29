@@ -31,7 +31,7 @@ This may seem tedious to acknowledge, but it is imperative to formulate the 2nd 
 **The Kth index is dependent on the Kth // 2 index of the Nth – 1 row**
 Each level of the pyrmaid is twice as long as the previous level. This is because the next row is built by transforming each index into 2 numbers.
 ```
-    Row      Length      Formula
+    Row      Length      Expression
     1        1           2 ^ 0
     2        2           2 ^ 1
     3        4           2 ^ 2

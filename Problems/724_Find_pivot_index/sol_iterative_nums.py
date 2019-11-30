@@ -3,7 +3,7 @@
  * @author [Jai Miles]
  * @email [jaimiles23@gmail.com]
  * @create date 2019-11-18 15:46:11
- * @modify date 2019-11-18 15:46:11
+ * @modify date 2019-11-18 16:01:36
  * @desc [
 ### Description
 This solution adds one index at a time and compares it to the remainder of the list.
@@ -21,6 +21,7 @@ This solution adds one index at a time and compares it to the remainder of the l
 ### Time complexity
 O(N) because the solution cycles through the entire list once.
 
+####
  ]
  */
 """
@@ -37,7 +38,7 @@ class Solution():
 
         for i in range(len(nums)):
             right_side -= nums[i]
-            
+
             if left_side == right_side:
                 return i
             

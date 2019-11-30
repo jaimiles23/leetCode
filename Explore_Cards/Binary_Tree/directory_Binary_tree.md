@@ -3,19 +3,33 @@
  * @email [jaimiles23@gmail.com]
  * @create date 2019-11-29 22:12:34
  * @modify date 2019-11-29 22:12:35
- * @desc [description]
+ * @desc [
+ * Files in this directory revise leetCode's [Binary Tree Explore Card](https://leetcode.com/explore/learn/card/data-structure-tree/)
+ * ]
  */
 
 # Overview
 This is a formal training on tree data structures. I have worked with binary trees in problem sets before, but without confidence. My aim in achieving this card is to be confident working with binary tree data structures and solidify other skills I have already developed, e.g., using recursion to navigate a binary tree.
 
-# Card structure
+# Introduction
+A tree is a frequently used data structure to simulate a hierarchical tree structure.
 
-## 1. Overview
+Each node of the tree has a root reference and a list of references to other nodes, called _child nodes_. A tree can be defined as an acyclic (not a cycle), directed graph that has N nodes and N-1 edges.
 
-## 2. Transverse a Tree
+A _Binary Tree_ is one of the most typical data structures - a tree data structure that has at most two children, aka left and right childs. 
 
-## 3. Solve a problem recursively
+This section covers:
+- the concept of a tree and a binay tree.
+- different transveral methods
+- using recursion to solve binary-tree related problems.
 
-## 4. Conclusion
+# Directories
+
+## 1.. Transverse a Tree
+1. *Transverse_a_tree_Introduction.md*
+2. 
+
+## 2. Solve a problem recursively
+
+## 3. Conclusion
 

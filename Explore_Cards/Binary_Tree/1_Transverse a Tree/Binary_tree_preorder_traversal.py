@@ -3,7 +3,7 @@
  * @author [Jai Miles]
  * @email [jaimiles23@gmail.com]
  * @create date 2019-11-30 11:49:18
- * @modify date 2019-11-30 14:16:25
+ * @modify date 2019-11-30 15:23:54
  * @desc [
 Contains recursive and iterative solutions to [Binary Tree Preorder Transversal](https://leetcode.com/problems/binary-tree-preorder-traversal/)
 
@@ -84,7 +84,7 @@ Note: add .right before .left because pop takes far right item from the list.
 O(T) = O(N)
 
 #### Space complexity
-O(1) - constant space allocated for the two (dynamic) lists.
+O(N) - amortized space complexity, all listnodes may be held in the todo_stack.
 
 ### leetCode Diagnostics:
 Runtime: 28 ms, faster than 90.33% of Python3 online submissions for Binary Tree Preorder Traversal.
@@ -154,9 +154,6 @@ class IterativeSolution():
         
         return tree_nodes
         
-
-
-
 
 def test_solutions():
     # tester = RecursiveSolution()

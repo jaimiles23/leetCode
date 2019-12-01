@@ -46,32 +46,34 @@ Runtime: 24 ms, faster than 96.38% of Python3 online submissions for Binary Tree
 Memory Usage: 12.5 MB, less than 100.00% of Python3 online submissions for Binary Tree Postorder Traversal.
 
 ## IterativeSolution
-You can postOrder traverse a binary iteratively as well. To do so, you will need two lists:
+To postOrder traverse a binary list using iteration, you need two lists:
 1. todo_stack: list of nodes that have not yet been added to the value list
-2. tree_vals: list of recorded values
+2. tree_vals: list of results
 
 ### Steps:
 Instantiate two lists, and add rootNode to todo_stack.
-    1. node = todo_stack.pop()
-    2a If node.left == None and node.right == None:
+    1. Repeat until todo_stack is empty
+    2. node = todo_stack.pop()
+    3a If node.left == None and node.right == None:
         tree_vals.append(node.val)
-    2b else:
-        todo_stack.append(node)
-        todo_stack.append(node.right)
-        todo_stack.append(node.left)
-    3. node = todo_stack.pop()
+    3b else:
+        todo_stack += [node, node.right, node.left]
+    4. node = todo_stack.pop()
+    
 
-Notes:
-- append order deliberate. last item from todo_stack is selected with pop, so order from 
-    right -> left must be left, right, root to follow postOrder traversal
-- when adding the node back to the stack, set node.left == None and node.right == None.
-    Otherwise, infinite loop.
-- Implemented step 2b with list comprehension
+#### Notes on each step
+    1. Will continue through all nodes
+    2. Take the last node from the stack - because pop() takes the last element, order adding to the list is important
+    3a. If the node has no children, or its children have already been accessed, add value to results
+    3b. If the node has children, add all nodes back to the stack. 
+        - Set the root pointers to None. Otherwise there will be an infinite loop
+        - Order is important here, it must go: root -> right -> left
+        - APpend
 
 ### Complexity Analysis
 
 #### Time complexity
-O(N) - must read each value in the binay tree
+O(N) - must read each value in the binary tree
 
 #### Space complexity
 O(N) - the stack may technically hold all nodes in some binary trees
@@ -79,6 +81,9 @@ O(N) - the stack may technically hold all nodes in some binary trees
 ### leetCode Diagnostics
 Runtime: 20 ms, faster than 99.19% of Python3 online submissions for Binary Tree Postorder Traversal.
 Memory Usage: 12.7 MB, less than 100.00% of Python3 online submissions for Binary Tree Postorder Traversal.
+ 
+### Notes: 
+I posted the iterative solution [here](https://leetcode.com/problems/binary-tree-postorder-traversal/discuss/441602/Python-Iterative-explained)
  ]
  */
 """

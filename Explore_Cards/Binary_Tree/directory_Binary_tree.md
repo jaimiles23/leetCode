@@ -27,7 +27,9 @@ This section covers:
 
 ## 1.. Transverse a Tree
 1. *Transverse_a_tree_Introduction.md*
-2. 
+2. *Binary_tree_preorder_traversal.py* node -> left -> right
+3. *Binary_tree_inorder_traversal.py* left -> node -> right
+4. *Binary_tree_postorder_traversal.py* left -> right -> node
 
 ## 2. Solve a problem recursively
 

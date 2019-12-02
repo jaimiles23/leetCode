@@ -78,14 +78,52 @@ that nodes are removed from thes tack
 - **DFS** adds node.right and node.left to the end of the stack, and accesses elements using pop()
 
 ## BfsSolution()
+Breadth First Search algorithm searches an entire row before moving to the next. 
 
 ### Steps
+While todo_stack:
+    1. Start with top node, n = 0
+    2. tree_vals[n].append(node.val)        # append to appropriate level
+    3. todo_stack.append(node.left, n + 1)
+    4. todo_stack.append(node.right, n + 1)
+    5. node, n = todo_stack.pop(0)
+
+The key to this method is taking the first element from the to_do list. Because the nodes are added all from 
+one level before adding the next, in a left -> right order, the node order will be correct. 
+_Note_: n is used to track the level to append to the list. 
 
 ### Complexity analysis
 #### Time complexity
+O(N) goes through the entire list
 
 #### Space complexity
+O(2N) because of the todo_stack and the tree_vals. 
+However, in practice no more than O(N) will ever be instantiated. 
 
+## DfsSolution()
+Depth first search algorithm is quite similar to the BFS. The key difference is that the last element of the list
+is used as the next node. 
+
+### Steps
+While todo_stack:
+    1. node, n  = root, 0
+    2. tree_vals[n].append(node.val)    #append val to appropriate level
+    3. todo_stack.append(node.right, n + 1)
+    4. todo_stack.append(node.left, n + 1)
+    5. node = todo_stack.pop()
+
+Notes:
+- N is used to track the leve
+- Because of the order that nodes are added to the tree, pop will always take the left most element.
+
+### Complexity Analysis
+
+#### Time complexity
+O(N) - must traverse all nodes in the tree
+
+#### Space complexity
+O(2N) - two mutable lists that all nodes pass through. However, in practice, these lists will never consume more
+space than O(N).
 
 #### leetCode Diagnostics:
 Runtime: 32 ms, faster than 92.82% of Python3 online submissions for Binary Tree Level Order Traversal.
@@ -189,6 +227,28 @@ class BfsSolution():
         return tree_vals
 
 
+class DfsSolution():
+    """
+    returns list of lists 
+    """
+    def levelOrder(self, root: TreeNode) -> list:
+        if root == None: return []
+
+        tree_vals, todo_stack = [], [(root, 0)]
+
+        while todo_stack:
+
+            node, n = todo_stack.pop()
+            
+            if node: 
+                if len(tree_vals) < n + 1: 
+                    tree_vals.append([])
+
+                tree_vals[n].append(node.val)
+                todo_stack.append((node.right, n + 1))
+                todo_stack.append((node.left, n + 1))
+        
+        return tree_vals
 
 
 def test_solutions():
@@ -197,8 +257,8 @@ def test_solutions():
     """
     # tester = RecursiveSolution()
     # tester = IterativeSolution1()
-    tester = BfsSolution()
-    # tester = DfsSolution()
+    # tester = BfsSolution()
+    tester = DfsSolution()
 
     print('test 1')
     root = TreeNode(3, 
@@ -208,8 +268,8 @@ def test_solutions():
                     TreeNode(7)))
     output = [
         [3],
-        [9,20],
-        [15,7]
+        [9, 20],
+        [15, 7]
     ]
     assert tester.levelOrder(root) == output
 

@@ -2,7 +2,7 @@
  * @author [Jai Miles]
  * @email [jaimiles23@gmail.com]
  * @create date 2019-12-03 20:02:49
- * @modify date 2019-12-03 20:02:49
+ * @modify date 2019-12-04 12:21:41
  * @desc [
 # Maximum Depth of Binary Tree
 Solutions to leetCode's [104. Maximum Depth of Binary Tree](https://leetcode.com/problems/maximum-depth-of-binary-tree/)

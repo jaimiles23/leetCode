@@ -28,10 +28,32 @@ N == None: return 0
 
 #### Complexity Analysis
 ##### Time complexity
+O(T) = R * O(s)
+    = O(N) * O(1)
+    = O(N)
+    Because the recursion must cycle through all nodes.
 
 ##### Space complexity
+= Recursive space + non-recursive space
+Recursive space = recursive stack = Address, params, and local variables.
+= O(N) * O(3) = O(N) * O(1) = O(N)
 
+#### leetCode diagnostics
+Runtime: 40 ms, faster than 89.84% of Python3 online submissions for Maximum Depth of Binary Tree.
+Memory Usage: 14.9 MB, less than 90.62% of Python3 online submissions for Maximum Depth of Binary Tree.
 
+### TopDownIterative
+This solution uses a stack that contains 2 values:
+- Node
+- Depth value
+
+If the node != None, 
+    += 1 to depth 
+    check the result for max depth
+    Add node.left and node.right to the stack (order does not matter).
+
+Note: This is a DFS (Depth first search) because pop() takes the last index. 
+A Breadth First Search (BFS) would insert new values at index 0, and take new nodes from the end of the list.
  ]
  */
 """
@@ -49,30 +71,51 @@ class TopDownRecursion():
         """
         returns maximum depth of a binary tree using a recusive top-down algorithm
         """
-        result = 0
-
-        def helper(node: TreeNode, depth: int) -> int:
+        def helper(node: TreeNode, depth: int, result: int) -> int:
             """
             utility recursive funciton
             """
             if node:
+                depth += 1
                 if depth > result:
-                    result = depth
+                    result = depth                    
             
-            helper(node.left, depth + 1)
-            helper(node.right, depth + 1)
-        
-        
-        if root == None: return 0
-        helper(root, 1)
+                result = helper(node.right, depth, result)
+                result = helper(node.left, depth, result)
+
+            return result
+
+        return helper(root, 0, 0)
+
+
+class TopDownIterative():
+    def maxDepth(self, root: TreeNode) -> int:
+        """
+        returns max depth of a binary tree using an iterative top down recursion.
+        """
+        result = 0
+        stack = [(root, result)]
+
+        while stack:
+            node, depth = stack.pop()
+
+            if node:
+                depth += 1
+                result = max(result, depth)
+
+                stack.append((node.right, depth))
+                stack.append((node.left, depth))
         return result
+
+
 
 
 def unit_tests():
     """
     Runs unit tests for Maximum Depth of Binary Tree
     """
-    tester = TopDownRecursion()
+    # tester = TopDownRecursion()
+    tester = TopDownIterative()
 
     print('test 1')
     node = TreeNode(3,
@@ -92,5 +135,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-print('1')

@@ -54,6 +54,22 @@ If the node != None,
 
 Note: This is a DFS (Depth first search) because pop() takes the last index. 
 A Breadth First Search (BFS) would insert new values at index 0, and take new nodes from the end of the list.
+
+#### Complexity analysis
+##### Time complexity
+O(N) - cycles through all nodes in the list
+
+##### Space complexity
+
+O(log(N)). This is because the iterative solution contains the answer O(1) and a list of nodes, O(N).  
+However, this solution will never contain all nodes at once, and uses a DFS algorithm.
+
+#### leetCode Diagnostics:
+Runtime: 44 ms, faster than 76.49% of Python3 online submissions for Maximum Depth of Binary Tree.
+Memory Usage: 13.8 MB, less than 100.00% of Python3 online submissions for Maximum Depth of Binary Tree.
+
+_Note_: Memory usage 1 MB difference in memory usage reflects space complexity.
+
  ]
  */
 """

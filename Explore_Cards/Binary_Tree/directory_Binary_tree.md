@@ -35,7 +35,9 @@ This section covers:
 
 ## 2. Solve a problem recursively
 1. *Solve_tree_problems_recursively.md*
-2. 
+2. *Maximum_depth_of_binary_Tree.py*
+3. *Symmetric_tree.py*
+4. *Path_sum.py*
 
 ## 3. Conclusion
 

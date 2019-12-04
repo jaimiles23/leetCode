@@ -70,6 +70,30 @@ Memory Usage: 13.8 MB, less than 100.00% of Python3 online submissions for Maxim
 
 _Note_: Memory usage 1 MB difference in memory usage reflects space complexity.
 
+## BottomUp
+Bottom up solutions use answers from child nodes in order to solve the problem. Because these answers a binay tree
+must access subtrees through the main node, a Bottom Up approach is of recursive nature. 
+
+### Recursive relation
+F(node, depth) = F(node.next, depth + 1)
+
+### Base case
+node == None: return 0 # indicates no depth
+
+### Complexity Analysis
+#### Time complexity
+O(T) = R * O(s) 
+    = O(N) * O(1)
+    = O(N)
+#### Space complexity
+Recursion related space + non-recursion related space
+= recursive stack (address, params, local vars) = O(N)
+
+### leetCode diagnostics
+Runtime: 36 ms, faster than 96.56% of Python3 online submissions for Maximum Depth of Binary Tree.
+Memory Usage: 15 MB, less than 90.62% of Python3 online submissions for Maximum Depth of Binary Tree.
+
+_Note_: again, the space complexity is reflected in the 15 MB memory usage.
  ]
  */
 """
@@ -124,6 +148,23 @@ class TopDownIterative():
         return result
 
 
+class BottomUpRecursion():
+    def maxDepth(self, root: TreeNode) -> int:
+        """
+        returns max depth of binay tree using bottomUp recursion
+        """
+        def helper(node, depth) -> int:
+            """
+            utility recursive function
+            """
+            if not node:
+                return 0
+            
+            left = helper(node.left, depth) + 1
+            right = helper(node.right, depth) + 1
+            return max(left, right)
+
+        return helper(root, 0)
 
 
 def unit_tests():
@@ -131,7 +172,8 @@ def unit_tests():
     Runs unit tests for Maximum Depth of Binary Tree
     """
     # tester = TopDownRecursion()
-    tester = TopDownIterative()
+    # tester = TopDownIterative()
+    tester = BottomUpRecursion()
 
     print('test 1')
     node = TreeNode(3,

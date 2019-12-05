@@ -2,7 +2,7 @@
  * @author [Jai Miles]
  * @email [jaimiles23@gmail.com]
  * @create date 2019-12-04 16:52:40
- * @modify date 2019-12-04 17:46:05
+ * @modify date 2019-12-04 18:50:26
  * @desc [
 Contains solutions to leetCode's [112. Path Sum](https://leetcode.com/problems/path-sum/)
 

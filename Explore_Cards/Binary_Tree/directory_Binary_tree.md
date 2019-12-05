@@ -2,7 +2,7 @@
  * @author [Jai Miles]
  * @email [jaimiles23@gmail.com]
  * @create date 2019-11-29 22:12:34
- * @modify date 2019-11-30 15:24:54
+ * @modify date 2019-12-04 18:52:54
  * @desc [
  * Files in this directory revise leetCode's [Binary Tree Explore Card](https://leetcode.com/explore/learn/card/data-structure-tree/)
  * ]
@@ -40,4 +40,10 @@ This section covers:
 4. *Path_sum.py*
 
 ## 3. Conclusion
+1. *Construct_binary_tree_from_inorder_and_postorder_traversal.py*
+2. *Construct_binary_tree_from_preorder_and_inorder_traversal.py*
+3. *Populating_next_right_pointers_in_each_node.py*
+4. *Populating_next_right_pointers_in_each_node_II.py*
+5. *Lowest_common_ancestor_of_a_binary_tree.py*
+6. *Serialize_and_deserialize_binary_tree.py*
 

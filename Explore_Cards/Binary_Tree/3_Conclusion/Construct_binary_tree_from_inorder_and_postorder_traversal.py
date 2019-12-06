@@ -81,8 +81,8 @@ Memory Usage: 17.1 MB, less than 100.00% of Python3 online submissions for Const
 
 _Note_  This solution uses ~ 1/5 the memory usage of the naive solution, however runs even slower. Two reasons 
 I can think of for this:
-1. Overhead associated with calling the search function
-2. time lag accessing the self.po_index variable - I am not very knowledgeable about this method.
+    1. Overhead associated with calling the search function
+    2. time lag accessing the self.po_index variable - I am not very knowledgeable about this method.
 
 ]
  */

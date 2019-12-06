@@ -3,7 +3,7 @@
  * @author [Jai Miles]
  * @email [jaimiles23@gmail.com]
  * @create date 2019-12-04 18:53:53
- * @modify date 2019-12-06 11:39:23
+ * @modify date 2019-12-06 12:04:37
  * @desc [
 Contains solutions to leetCode's [106. Construct Binary Tree from Inorder and Postorder Traversal](https://leetcode.com/problems/construct-binary-tree-from-inorder-and-postorder-traversal/_)
 
@@ -219,10 +219,60 @@ class nonSlicingRecursiveSolution():
         return create_node(inorder, postorder, io_start, io_end)
 
 
+class nonSlicingPopSolution():
+    """
+    Removed po_index and stoppped passing postorder as parameter. Instead, keep as class variable and pop()
+    """
+    def buildTree(self, inorder: list, postorder: list) -> TreeNode:
+
+        self.postorder = postorder
+        def create_node(inorder: list, io_start: int, io_end: int) -> TreeNode:
+            if io_start > io_end: 
+                return None
+            
+            node = TreeNode(self.postorder.pop())
+
+            io_index = search(inorder, node.val, io_start, io_end)
+
+            node.right = create_node(inorder, io_index + 1, io_end)
+            node.left = create_node(inorder, io_start, io_index - 1)
+            
+            return node
+
+
+        def search(inorder: list, val: int, io_start: int, io_end: int) -> int:
+            for i in range(io_start, io_end + 1):
+                if (inorder[i] == val):
+                    return i
+        
+        io_start, io_end = 0, len(inorder) - 1 
+        return create_node(inorder, io_start, io_end)
+
+
+class naiveCleanSolution():
+    """
+Taken from [here](https://leetcode.com/problems/construct-binary-tree-from-inorder-and-postorder-traversal/discuss/221681/Don't-use-top-voted-Python-solution-for-interview-here-is-why)
+    
+    Note: This solution is also O(N**2), but is half the time of my original recursion.
+    """
+    def buildTree(self, inorder: list, postorder: list) -> TreeNode:
+        if not inorder:
+            return None
+
+        node = TreeNode(postorder.pop())
+        n_index = inorder.index(node.val)
+
+        node.right = self.buildTree(inorder[n_index + 1:], postorder)
+        node.left = self.buildTree(inorder[:n_index], postorder)
+        
+        return node
+
+
 def unit_tests():
     # tester = incorrectUserSolution()
     # tester = naiveRecursiveSolution()
-    tester = nonSlicingRecursiveSolution()
+    # tester = nonSlicingRecursiveSolution()
+    tester = naiveCleanSolution()
 
     print('test 1')
     inorder = [9, 3, 15, 20, 7]

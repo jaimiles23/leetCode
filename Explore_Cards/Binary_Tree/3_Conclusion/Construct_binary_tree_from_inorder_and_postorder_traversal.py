@@ -3,7 +3,7 @@
  * @author [Jai Miles]
  * @email [jaimiles23@gmail.com]
  * @create date 2019-12-04 18:53:53
- * @modify date 2019-12-05 14:24:43
+ * @modify date 2019-12-05 16:21:16
  * @desc [
 Contains solutions to leetCode's [106. Construct Binary Tree from Inorder and Postorder Traversal](https://leetcode.com/problems/construct-binary-tree-from-inorder-and-postorder-traversal/_)
 
@@ -23,6 +23,26 @@ To implement these two principles, I will use an iterative algorithm. The algori
 inOrder and postOrder lists to be tuples of two values (node, visited). The visited variable will be a 
 binary indicator if the node has been used. If the node adjacent to a visited node is used, then that node 
 will be considered a leaf (ending) on that adjacent side.
+
+_**NOTE**_
+User developed algorithm incorrect. Use testcase 4
+inorder: [2, 3, 1]
+postorder: [3, 2, 1]
+        1
+    /
+    2
+        \
+        30
+However, user algorithm incorrectly assigned both variables. Must account that right subtree will be slide of
+inorder[root:].
+
+Instead, did secondary research and read solutions posted here:
+- [GeeksforGeeks1](https://www.geeksforgeeks.org/construct-tree-from-given-inorder-and-preorder-traversal/)
+- [GeeksforGeeks2](https://www.geeksforgeeks.org/construct-a-binary-tree-from-postorder-and-inorder/)
+- [programCreek](https://www.programcreek.com/2013/01/construct-binary-tree-from-inorder-and-postorder-traversal/)
+- [Hui Lin blog post](https://medium.com/@huilin1618/constructing-binary-tree-from-inorder-and-postorder-traversal-3f92c4183d65)
+
+
 ]
  */
 """
@@ -33,9 +53,98 @@ class TreeNode:
         self.left = left
         self.right = right
 
+"""
+User developed algorithm incorrect, reference above.
+"""
+# class incorrectUserSolution():
+#     def buildTree(self, inorder: list, postorder: list) -> TreeNode:
+#         """
+#         Returns treenode from inorder and postorder lists uses inductively derived principles noted above
+#         """
+#         if inorder == []: return None
+    
+#         root = TreeNode(postorder[-1])
+#         node, stack = root, [root]
+
+#         while stack:
+#             print('**')
+#             node = stack.pop()
+#             print('node:', node.val)
+
+#             # left node
+#             inorder_index = inorder.index(node.val)     
+#             inorder[inorder_index] = None
+            
+#             left = inorder[inorder_index - 1] if (inorder_index - 1 >= 0) else None
+#             print('left', left)
+
+#             if left:             
+#                 left = TreeNode(left)
+#             node.left = left
+
+#             # right node
+#             postorder_index = postorder.index(node.val)
+#             postorder[postorder_index] = None
+
+#             right = postorder[postorder_index - 1] if (postorder_index - 1 >= 0) else None
+#             if right and left: right = right if right != left.val else None
+#             print('right', right)
+
+#             if right:
+#                 right = TreeNode(right)
+#             node.right = right
+
+#             if right:
+#                 stack.append(right)
+#             if left: 
+#                 stack.append(left)
+
+#         return root
+
+
+class naiveRecursiveSolution():
+    """
+    Recreation of O(N ** 2) solution from GeekforGeeks
+    """
+    def buildTree(self, inorder: list, postorder: list):
+        # Base case
+        if inorder == []:
+            return None
+
+        # Assign node
+        node_val = postorder[-1]
+        node = TreeNode(node_val)
+        io_index = inorder.index(node_val)
+
+        # left node
+        if io_index == 0:   # Nothing to the left
+            node.left == None
+        else:
+            io_left = inorder[:io_index]
+            po_left = postorder[: len(io_left)]
+            node.left = self.buildTree(io_left, po_left)
+        
+        # right node
+        if io_index == len(inorder) - 1:    # nothing to right
+            node.right == None
+        else:
+            io_right = inorder[io_index + 1:]
+            po_right = postorder[len(io_left): len(postorder) - 1]
+            node.right = self.buildTree(io_right, po_right)
+
+        print(f"""
+io_left {io_left}
+io_right {io_right}
+po_left {po_left}
+po_right {po_right}
+        """)
+
+        return node
+
 
 def unit_tests():
-    tester = None
+    # tester = incorrectUserSolution()
+    tester = naiveRecursiveSolution()
 
     print('test 1')
     inorder = [9, 3, 15, 20, 7]
@@ -46,6 +155,31 @@ def unit_tests():
                     TreeNode(15),
                     TreeNode(7))
     )
+    assert tester.buildTree(inorder, postorder) == output
+
+    print('test 2')
+    inorder = [2, 1]
+    postorder = [2, 1]
+    output = TreeNode(1,
+                TreeNode(2))
+    assert tester.buildTree(inorder, postorder) == output
+
+    print('test 3')
+    inorder = [1, 2]
+    postorder = [2, 1]
+
+    output = TreeNode(1,
+                None,
+                TreeNode(2))
+    assert tester.buildTree(inorder, postorder) == output
+
+    print('test 4')
+    inorder = [2, 3, 1]
+    postorder = [3, 2, 1]
+
+    output = TreeNode(1,
+                None,
+                TreeNode(2))
     assert tester.buildTree(inorder, postorder) == output
 
 

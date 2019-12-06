@@ -3,7 +3,7 @@
  * @author [Jai Miles]
  * @email [jaimiles23@gmail.com]
  * @create date 2019-12-04 18:53:53
- * @modify date 2019-12-05 23:38:14
+ * @modify date 2019-12-06 11:39:23
  * @desc [
 Contains solutions to leetCode's [106. Construct Binary Tree from Inorder and Postorder Traversal](https://leetcode.com/problems/construct-binary-tree-from-inorder-and-postorder-traversal/_)
 
@@ -52,12 +52,37 @@ Naive recursive solution assigns the root using the last index of postorder.
 
 ### Complexity analysis
 #### Time complexity
+O(T) = R * O(s)
+    = O(N) * O(s)
+    O(s) = .index() and list slicing for (left_io, left_po, right_io, and right_po) = O(N)
+        = O(N) + O(N)
+        = O(2N)
+    = O(N) * O(2N) = O(2N**2)
+    = O(N**2)
 
 #### Space complexity
+recursive related space + non_recursive related space O(1)
+recursive related space = address, params, local vars (list slicing is O(N)). 
+                        = O(N) * O(N)
+                        = O(N**2)
 
 leetCode Diagnostics:
-Runtime: 204 ms, faster than 24.43% of Python3 online submissions for Construct Binary Tree from Inorder and Postorder Traversal.
-Memory Usage: 86.9 MB, less than 55.56% of Python3 online submissions for Construct Binary Tree from Inorder and Postorder Traversal.
+Runtime: 196 ms, faster than 30.00% of Python3 online submissions for Construct Binary Tree from Inorder and Postorder Traversal.
+Memory Usage: 86.8 MB, less than 55.56% of Python3 online submissions for Construct Binary Tree from Inorder and Postorder Traversal.
+
+## nonSlicingRecursiveSolution
+This solution employs the same ideas expressed in the above example and uses integers 
+to track where to search the inorder (IO) list, instead of list slicing. This is more memory efficient, because
+it does not slice the list and keep track of the sliced list in each recursion.
+
+### leetCode Diagnostics:
+Runtime: 284 ms, faster than 11.10% of Python3 online submissions for Construct Binary Tree from Inorder and Postorder Traversal.
+Memory Usage: 17.1 MB, less than 100.00% of Python3 online submissions for Construct Binary Tree from Inorder and Postorder Traversal.
+
+_Note_  This solution uses ~ 1/5 the memory usage of the naive solution, however runs even slower. Two reasons 
+I can think of for this:
+1. Overhead associated with calling the search function
+2. time lag accessing the self.po_index variable - I am not very knowledgeable about this method.
 
 ]
  */
@@ -122,7 +147,7 @@ class naiveRecursiveSolution():
     """
     Recreation of O(N ** 2) solution from GeekforGeeks
     """
-    def buildTree(self, inorder: list, postorder: list):
+    def buildTree(self, inorder: list, postorder: list) -> TreeNode:
         # Base case
         if inorder == []:
             return None
@@ -151,9 +176,53 @@ class naiveRecursiveSolution():
         return node
 
 
+class nonSlicingRecursiveSolution():
+    """
+    This solution uses integers to search the appropriate indices instead of slicing the list. This is more
+    memory efficient than the naiveRecursiveSolution above because we are storing ints, not lists: O(1) v O(N)
+    """
+
+    def buildTree(self, inorder: list, postorder: list) -> TreeNode:
+        """
+        Constructs binary tree from inorder and postorder traversal lists. 
+        """
+        self.po_index = len(inorder) - 1
+        def create_node(inorder: list, postorder: list, io_start: int, io_end: int) -> TreeNode:
+            """
+            Returns treenode for tree
+            """
+            if io_start > io_end: 
+                return None
+            
+            node = TreeNode(postorder[self.po_index])
+            # print('node', node.val)
+            self.po_index -= 1
+
+            io_index = search(inorder, node.val, io_start, io_end)
+
+            node.right = create_node(inorder, postorder, io_index + 1, io_end)
+            node.left = create_node(inorder, postorder, io_start, io_index - 1)
+            
+            return node
+
+
+        def search(inorder: list, val: int, io_start: int, io_end: int) -> int:
+            """
+            Searches inorder list from index[start] to index[end] to return index of value.
+            More efficient search algorithm because we know range where index is in.
+            """
+            for i in range(io_start, io_end + 1):
+                if (inorder[i] == val):
+                    return i
+        
+        io_start, io_end = 0, len(inorder) - 1 
+        return create_node(inorder, postorder, io_start, io_end)
+
+
 def unit_tests():
     # tester = incorrectUserSolution()
-    tester = naiveRecursiveSolution()
+    # tester = naiveRecursiveSolution()
+    tester = nonSlicingRecursiveSolution()
 
     print('test 1')
     inorder = [9, 3, 15, 20, 7]

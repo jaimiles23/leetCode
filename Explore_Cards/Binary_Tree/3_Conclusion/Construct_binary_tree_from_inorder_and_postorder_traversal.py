@@ -3,7 +3,7 @@
  * @author [Jai Miles]
  * @email [jaimiles23@gmail.com]
  * @create date 2019-12-04 18:53:53
- * @modify date 2019-12-05 16:21:16
+ * @modify date 2019-12-05 23:38:14
  * @desc [
 Contains solutions to leetCode's [106. Construct Binary Tree from Inorder and Postorder Traversal](https://leetcode.com/problems/construct-binary-tree-from-inorder-and-postorder-traversal/_)
 
@@ -42,6 +42,22 @@ Instead, did secondary research and read solutions posted here:
 - [programCreek](https://www.programcreek.com/2013/01/construct-binary-tree-from-inorder-and-postorder-traversal/)
 - [Hui Lin blog post](https://medium.com/@huilin1618/constructing-binary-tree-from-inorder-and-postorder-traversal-3f92c4183d65)
 
+## NaiveRecursiveSolution():
+Naive recursive solution assigns the root using the last index of postorder. 
+    - find left and right node with recursive solution
+        - left recursion: pass inorder list that is left of previous node, pass slice of postorder list that is 
+        same length as inorder list
+        - right_recursion: pass inorder list to right of previous node, pass sliced post order list of same
+        length as passed inorder list.
+
+### Complexity analysis
+#### Time complexity
+
+#### Space complexity
+
+leetCode Diagnostics:
+Runtime: 204 ms, faster than 24.43% of Python3 online submissions for Construct Binary Tree from Inorder and Postorder Traversal.
+Memory Usage: 86.9 MB, less than 55.56% of Python3 online submissions for Construct Binary Tree from Inorder and Postorder Traversal.
 
 ]
  */
@@ -128,16 +144,9 @@ class naiveRecursiveSolution():
         if io_index == len(inorder) - 1:    # nothing to right
             node.right == None
         else:
-            io_right = inorder[io_index + 1:]
-            po_right = postorder[len(io_left): len(postorder) - 1]
+            io_right = inorder[io_index + 1: ]
+            po_right = postorder[len(inorder[:io_index]): len(postorder) - 1]
             node.right = self.buildTree(io_right, po_right)
-
-        print(f"""
-io_left {io_left}
-io_right {io_right}
-po_left {po_left}
-po_right {po_right}
-        """)
 
         return node
 

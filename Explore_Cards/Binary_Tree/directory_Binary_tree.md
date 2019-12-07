@@ -43,7 +43,4 @@ This section covers:
 1. *Construct_binary_tree_from_inorder_and_postorder_traversal.py*
 2. *Construct_binary_tree_from_preorder_and_inorder_traversal.py*
 3. *Populating_next_right_pointers_in_each_node.py*
-4. *Populating_next_right_pointers_in_each_node_II.py*
-5. *Lowest_common_ancestor_of_a_binary_tree.py*
-6. *Serialize_and_deserialize_binary_tree.py*
-
+4. *Conclusion_thoughts* - reflect on current skill and need to practice more before tackling exercises.

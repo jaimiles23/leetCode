@@ -60,3 +60,31 @@ class UserSolution():
                 nodes[i].next = nodes[i + 1]
                 
         return nodes[0]
+
+
+class RecursiveSolution():
+    """
+    Taken from [here](https://leetcode.com/problems/populating-next-right-pointers-in-each-node/discuss/439349/Simple-Python-solution-beats-100)
+    """
+    def connect(self, root):
+        def helper(root, rightroot):
+            if root == None:        # base case
+                return None
+            helper(root.left, root.right)   # bottom-up recursive call
+
+            if rightroot:
+                root.next = rightroot
+                helper(root.right, rightroot.left)      # fix nodes
+            else:
+                helper(root.right, None)        # set all subtree right nodes to none initially
+
+        helper(root, None)
+        return root
+        
+"""
+This is a bottom up algorithm that assigns the .next address to different roots - you can tell this because
+the first line is a recursion.
+
+It will set each subtrees.right node to None, before moving up and checking the larger subtree. It will then assign
+the root.next to the right node outside of the subtree with: helper(root.right, rightroot.left)
+"""

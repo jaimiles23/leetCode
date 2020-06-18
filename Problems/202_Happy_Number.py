@@ -48,25 +48,3 @@ class IterativeSolution:
                 searched_nums.add(num)
         
         return False
-
-
-def test_solutions():
-    '''
-    Runs unit tests for 202. Happy number
-    '''
-    tester = IterativeSolution()
-
-    print('test 1')
-    data = 19
-    answer = True
-    assert tester.isHappy(data) == answer
-
-    print('done')
-
-
-def main():
-    test_solutions()
-
-
-if __name__ == "__main__":
-    main()

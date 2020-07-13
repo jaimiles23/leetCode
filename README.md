@@ -1,11 +1,14 @@
 # LeetCode
-LeetCode solutions to build knowledge of data structures and algorithms.
+Solutions to various data structure and algorithm exercises taken from competitive programming website [LeetCode](https://leetcode.com/)
+
 
 ## Database Problems
-Contains solutions to database problems.
+Solutions to relational database problems.
+
 
 ## Explore cards
 Contains notes & solutions to leetCode Explore Cards, which provide focused practice of specific types of algorithms.
 
+
 ## Problems
-Contains general solutions to general leetCode problems
+Solutions to general leetCode progblems.

@@ -21,7 +21,7 @@ Notes:
  ]
  */
 """
-
+## Solution 1
 class Solution:
     def runningSum(self, nums: List[int]) -> List[int]:
         sums = []
@@ -30,3 +30,17 @@ class Solution:
             total += num
             sums.append(total)
         return sums
+
+## Solution 2
+class Solution:
+    def runningSum(self, nums: List[int]) -> List[int]:
+        def get_sums(nums):
+            """
+            Aux generator func to return num
+            """
+            total, n = 0, 0
+            while n < len(nums):
+                total += nums[n]
+                yield total
+                n += 1
+        return [n for n in get_sums(nums)]

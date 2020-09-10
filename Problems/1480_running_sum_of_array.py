@@ -31,6 +31,7 @@ class Solution:
             sums.append(total)
         return sums
 
+
 ## Solution 2
 class Solution:
     def runningSum(self, nums: List[int]) -> List[int]:

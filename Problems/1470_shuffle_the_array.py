@@ -16,10 +16,14 @@ Time complexity: O(N)
  ]
  */
 """
+from typing import List
 
 class Solution:
     def shuffle(self, nums: List[int], n: int) -> List[int]:
         def gen_shuffle_list(nums, n):
+            """
+            Generator function to yield list results.
+            """
             for i in range(n):
                 yield nums[i]
                 yield nums[i + n]

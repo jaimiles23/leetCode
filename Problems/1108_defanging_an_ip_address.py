@@ -17,10 +17,17 @@ NOTE:
  */
  """
 
+## Solution 1
 class Solution:
     def defangIPaddr(self, address: str) -> str:
-        address = [char for char in address]
+        address = [char for char in address if char]
         for i in range(len(address)):
             if address[i] == '.':
                 address[i] = '[.]'
         return ''.join(address)
+
+
+## 1 line solution
+class Solution:
+    def defangIPaddr(self, address: str) -> str:
+        return ''.join([char if char != '.' else '[.]' for char in address])
